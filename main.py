@@ -9,10 +9,11 @@ while True:
 
 
     class Car:
-        def __init__(self, brand, model, engine):
+        def __init__(self, brand, model, engine, price):
             self.brand = brand
             self.model = model
             self.engine = engine
+            self.price = price
             ## Ideia: Fazer uma função para checar quanto vale, se for barata exibe $, se for razoavel exibe $$ e se for cara exibe $$$
         def display_info(self):
             print(f"--> {self.brand} {self.model}, motor {self.engine}")
@@ -31,8 +32,8 @@ while True:
             print(f"--> {self.brand} {self.model}, {self.engine} cilindradas")
 
     cars = [
-        car1:= Car("Toyota", "Corolla", "1.6"),
-        car2:= Car("Volkswagen", "Gol", "1.0"),
+        car1:= Car("Toyota", "Corolla", "1.6", "R$ 70.000"),
+        car2:= Car("Volkswagen", "Gol", "1.0", "R$ "),
         car3:= Car("Chevrolet", "Onix", "1.0"),
         car4:= Car("Nissan", "Sentra", "2.0"),
         car5:= Car("Renault", "Kwid", "1.0"),
@@ -40,17 +41,30 @@ while True:
     ]
 
     motorcycles = [
-        moto:= Moto("Honda", "CG 160", "162,7"),
-        moto:= Moto("Yamaha", "factor 150", "146"),
-        moto:= Moto("Honda", "Biz 125", "124,9"),
-        moto:= Moto("Yamaha", "Fazer 150", "149"),
-        moto:= Moto("Shineray", "Worker 125", "123"),
-        moto:= Moto("Kawasaki", "Z400", "399")
+        moto1:= Moto("Honda", "CG 160", "162,7"),
+        moto2:= Moto("Yamaha", "factor 150", "146"),
+        moto3:= Moto("Honda", "Biz 125", "124,9"),
+        moto4:= Moto("Yamaha", "Fazer 150", "149"),
+        moto5:= Moto("Shineray", "Worker 125", "123"),
+        moto6:= Moto("Kawasaki", "Z400", "399")
     ]
+
+    def buy_it():
+        buy = input("gostaria de comprar algo? [S/n] ").upper()
+
+        if buy.startswith("S"):
+            input("qual?")
+        elif buy.startswith("N"):
+            pass
+
 
     if choice.startswith("C"):
         for car in cars:
             car.display_info()
+        
+
     elif choice.startswith("M"):
         for moto in motorcycles:
             moto.display_info()
+
+
